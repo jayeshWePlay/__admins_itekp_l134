@@ -76,6 +76,13 @@ $route['deleteReferee/([0-9]+)'] = "RefereeController/deleteReferee/$1";
 $route['deleteFeaturedPlayer/([0-9]+)'] = "FeaturedPlayerController/deleteFeaturedPlayer/$1";
 $route['deleteNews/([0-9]+)'] = "NewsController/deleteNews/$1";
 
+/*Edit Routes*/
+$route['editTeam/([0-9]+)'] = "LoginController/editTeam/$1";
+$route['editPlayer/([0-9]+)'] = "PlayerController/editPlayer/$1";
+$route['editReferee/([0-9]+)'] = "RefereeController/editReferee/$1";
+$route['editFeaturedPlayer/([0-9]+)'] = "FeaturedPlayerController/editFeaturedPlayer/$1";
+$route['editNews/([0-9]+)'] = "NewsController/editNews/$1";
+
 /* These are mobile app related routes*/
 $route['wsGetTeams'] = 'LoginController/getAllTeamsWS';
 $route['wsGetPlayers'] = 'PlayerController/getAllPayersWS';
