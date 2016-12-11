@@ -36,6 +36,12 @@ class RefereeController extends CI_Controller {
 		}
 	}
 
+	public function getAllRefereesWS(){
+		$data = $this->RefereeModel->getAllReferee();
+		$data = json_encode($data);
+		echo $data;
+	}
+
 	public function loadReferees(){
 		$data['referees'] = $this->RefereeModel->getAllReferee();
 		$this->load->view('referees',$data);

@@ -36,6 +36,12 @@ class PlayerController extends CI_Controller {
 		}
 	}
 
+	public function getAllPayersWS(){
+		$data = $this->PlayerModel->getAllPlayers();
+		$data = json_encode($data);
+		echo $data;
+	}
+
 	public function loadPlayers(){
 		$data['players'] = $this->PlayerModel->getAllPlayers();
 		$this->load->view('players',$data);

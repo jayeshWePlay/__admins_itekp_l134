@@ -36,6 +36,12 @@ class NewsController extends CI_Controller {
 		}
 	}
 
+	public function getAllNewsWS(){
+		$data = $this->NewsModel->getAllNews();
+		$data = json_encode($data);
+		echo $data;
+	}
+
 	public function loadNews(){
 		$data['news'] = $this->NewsModel->getAllNews();
 		$this->load->view('news',$data);

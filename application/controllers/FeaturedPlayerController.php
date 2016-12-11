@@ -36,6 +36,12 @@ class FeaturedPlayerController extends CI_Controller {
 		}
 	}
 
+	public function getAllFeaturedPlayersWS(){
+		$data = $this->FeaturedPlayerModel->getAllFeaturedPlayers();
+		$data = json_encode($data);
+		echo $data;
+	}
+
 	public function loadFeaturedPlayers(){
 		$data['featured'] = $this->FeaturedPlayerModel->getAllFeaturedPlayers();
 		$this->load->view('featuredPlayers',$data);
