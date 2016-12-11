@@ -68,6 +68,8 @@ $route['featured-player'] = 'FeaturedPlayerController/index';
 $route['addFeaturedPlayer'] = 'FeaturedPlayerController/addFeaturedPlayer';
 $route['saveFeaturedPlayer'] = 'FeaturedPlayerController/do_upload';
 $route['translate_uri_dashes'] = FALSE;
+
+/* These are mobile app related routes*/
 $route['wsGetTeams'] = 'LoginController/getAllTeamsWS';
 $route['wsGetPlayers'] = 'PlayerController/getAllPayersWS';
 $route['wsGetNews'] = 'NewsController/getAllNewsWS';
