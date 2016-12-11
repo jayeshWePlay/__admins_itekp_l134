@@ -9,6 +9,14 @@ class TeamsModel extends CI_Model {
 
     }
 
+    function editTeam($id) {
+           $this->db->select('*')->from('team');
+           $this->db->where('tm_id', $id);
+        $query = $this->db->get();
+        return $query->result_array();
+
+    }
+
     function addTeam($data){
     	return $this->db->insert('team', $data);
     }

@@ -103,6 +103,17 @@ class LoginController extends CI_Controller {
 		}
 	}
 
+	public function editTeam($id){
+		if(!empty($this->session->userdata("login"))){
+			//echo $id;
+			$data['result'] = $this->TeamsModel->editTeam($id);
+			$this->load->view('editTeam',$data);
+			$this->index();
+		}else{
+			$this->load->view('login');
+		}
+	}
+
 	public function saveTeam(){
 		if(!empty($this->session->userdata("login"))){
 			if(!empty($_POST['name']) && !empty($_POST['home']) && !empty($_POST['away']) && isset($_FILES['logo']) && $_FILES['logo']['size'] > 0){

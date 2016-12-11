@@ -90,7 +90,27 @@
                                     $row .= '</td><td>'.$referee['ref_difficulty_lvl'];
                                     $row .= '</td><td>'.$referee['created_at'];
                                     $row .= '</td><td>'.$referee['updated_at'].'</td>';
-                                    $row .= '</td><td class="text-center"><a href="#"><span class="badge bg-blue"><i class="fa fa-edit"></i></span></a>&nbsp;&nbsp;&nbsp;<a href="'.site_url().'deleteReferee/'.$referee["ref_id"].'"><span class="badge bg-red"><i class="fa fa-remove"></i></span></a></td></tr>';
+                                    $row .= '</td><td class="text-center"><a href="'.site_url().'editReferee/'.$referee["ref_id"].'"><span class="badge bg-blue"><i class="fa fa-edit"></i></span></a>&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#delete'.$referee["ref_id"].'"><span class="badge bg-red"><i class="fa fa-remove"></i></span></a></td></tr>';
+                                    $row .= '<div id="delete'.$referee["ref_id"].'" class="modal fade bs-example-modal-sm" tabindex="-1"    role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog ">
+                                              <div class="modal-content">
+
+                                                <div class="modal-header">
+                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                                                  </button>
+                                                  <h4 class="modal-title" id="myModalLabel2">Delete</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                  Are you sure you want to delete this record?
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                                  <a href="'.site_url().'deleteReferee/'.$referee["ref_id"].'" class="btn btn-danger">Yes</a>
+                                                </div>
+
+                                              </div>
+                                            </div>
+                                          </div>';
                                     echo $row;
                                   }
                                 }?>
