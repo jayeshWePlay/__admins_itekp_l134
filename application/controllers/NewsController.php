@@ -55,6 +55,16 @@ class NewsController extends CI_Controller {
 		}
 	}
 
+	public function deleteNews($id){
+		if(!empty($this->session->userdata("login"))){
+			//echo $id;
+			$result = $this->NewsModel->deleteNews($id);
+			$this->index();
+		}else{
+			$this->load->view('login');
+		}
+	}
+
 
 	public function do_upload()
         {

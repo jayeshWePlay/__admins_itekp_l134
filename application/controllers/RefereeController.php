@@ -47,6 +47,16 @@ class RefereeController extends CI_Controller {
 		$this->load->view('referees',$data);
 	}
 
+	public function deletePlayer($id){
+		if(!empty($this->session->userdata("login"))){
+			//echo $id;
+			$result = $this->RefereeModel->deleteReferee($id);
+			$this->index();
+		}else{
+			$this->load->view('login');
+		}
+	}
+
 	public function addReferee(){
 		if(!empty($this->session->userdata("login"))){
 			$this->load->view('addReferee');

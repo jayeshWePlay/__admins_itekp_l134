@@ -55,6 +55,16 @@ class FeaturedPlayerController extends CI_Controller {
 		}
 	}
 
+	public function deleteFeaturedPlayer($id){
+		if(!empty($this->session->userdata("login"))){
+			//echo $id;
+			$result = $this->FeaturedPlayerModel->deleteFeaturedPlayer($id);
+			$this->index();
+		}else{
+			$this->load->view('login');
+		}
+	}
+
 
 	public function do_upload()
         {

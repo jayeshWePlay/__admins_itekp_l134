@@ -17,4 +17,9 @@ class FeaturedPlayerModel extends CI_Model {
 		$this->db->where('id', $id);
 		$this->db->update('featured_players', $data);
 	}
+
+    function deleteFeaturedPlayer($id){
+        $this->db->where('id', $id);
+        $this->db->delete('featured_players');
+    }
 }

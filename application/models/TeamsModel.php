@@ -17,4 +17,9 @@ class TeamsModel extends CI_Model {
 		$this->db->where('tm_id', $id);
 		$this->db->update('team', $data);
 	}
+
+    function deleteTeam($id){
+        $this->db->where('tm_id', $id);
+        $this->db->delete('team');
+    }
 }

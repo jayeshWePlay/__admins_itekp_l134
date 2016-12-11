@@ -17,4 +17,9 @@ class RefereeModel extends CI_Model {
 		$this->db->where('ref_id', $id);
 		$this->db->update('referees', $data);
 	}
+
+    function deleteReferee($id){
+        $this->db->where('ref_id', $id);
+        $this->db->delete('referees');
+    }
 }

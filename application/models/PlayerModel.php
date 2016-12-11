@@ -17,4 +17,9 @@ class PlayerModel extends CI_Model {
 		$this->db->where('usr_id', $id);
 		$this->db->update('user_profiles', $data);
 	}
+
+    function deletePlayer($id){
+        $this->db->where('usr_id', $id);
+        $this->db->delete('user_profiles');
+    }
 }

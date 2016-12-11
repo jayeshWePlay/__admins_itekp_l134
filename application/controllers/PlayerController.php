@@ -47,6 +47,16 @@ class PlayerController extends CI_Controller {
 		$this->load->view('players',$data);
 	}
 
+	public function deletePlayer($id){
+		if(!empty($this->session->userdata("login"))){
+			//echo $id;
+			$result = $this->PlayerModel->deletePlayer($id);
+			$this->index();
+		}else{
+			$this->load->view('login');
+		}
+	}
+
 	public function addPlayer(){
 		if(!empty($this->session->userdata("login"))){
 			$this->load->view('addPlayer');
