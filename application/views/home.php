@@ -76,7 +76,7 @@
                                   <th>Away color</th>
                                   <th>Created at</th>
                                   <th>Updated at</th>
-                                  <th class="no-sort">Action</th>
+                                  <th width="80px;" class="no-sort">Action</th>
                                 </tr>
                               </thead>
 
@@ -84,7 +84,6 @@
                                 <?php if(!empty($teams)){
                                   
                                   foreach ($teams as $team ) {
-                                    $site = site_url();
                                     $row = '';
                                     $row .= '<tr><td>'.$team['tm_id'];
                                     $row .= '</td><td>'.$team['tm_code'];
@@ -94,7 +93,7 @@
                                     $row .= '</td><td style="color:'.$team['tm_away_color'].';">'.$team['tm_away_color'];
                                     $row .= '</td><td>'.$team['created_at'];
                                     $row .= '</td><td>'.$team['updated_at'].'</td>';
-                                    $row .= '</td><td class="text-center"><a href="#"><span class="badge bg-blue"><i class="fa fa-edit"></i></span></a>&nbsp;&nbsp;&nbsp;<a href="'.$site.'deleteTeam/'.$team["tm_id"].'"><span class="badge bg-red"><i class="fa fa-remove"></i></span></a></td></tr>';
+                                    $row .= '</td><td class="text-center"><a href="#"><span class="badge bg-blue"><i class="fa fa-edit"></i></span></a>&nbsp;&nbsp;&nbsp;<a href="'.site_url().'deleteTeam/'.$team["tm_id"].'"><span class="badge bg-red"><i class="fa fa-remove"></i></span></a></td></tr>';
                                     echo $row;
                                   }
                                 }?>

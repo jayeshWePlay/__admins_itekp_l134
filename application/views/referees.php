@@ -73,6 +73,7 @@
                                   <th>Difficulty</th>
                                   <th>Created at</th>
                                   <th>Updated at</th>
+                                  <th width="80px;" class="no-sort">Action</th>
                                 </tr>
                               </thead>
 
@@ -88,7 +89,8 @@
                                     $row .= '</td><td>'.$referee['ref_matches'];
                                     $row .= '</td><td>'.$referee['ref_difficulty_lvl'];
                                     $row .= '</td><td>'.$referee['created_at'];
-                                    $row .= '</td><td>'.$referee['updated_at'].'</td></tr>';
+                                    $row .= '</td><td>'.$referee['updated_at'].'</td>';
+                                    $row .= '</td><td class="text-center"><a href="#"><span class="badge bg-blue"><i class="fa fa-edit"></i></span></a>&nbsp;&nbsp;&nbsp;<a href="'.site_url().'deleteReferee/'.$referee["ref_id"].'"><span class="badge bg-red"><i class="fa fa-remove"></i></span></a></td></tr>';
                                     echo $row;
                                   }
                                 }?>

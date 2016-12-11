@@ -47,7 +47,7 @@ class RefereeController extends CI_Controller {
 		$this->load->view('referees',$data);
 	}
 
-	public function deletePlayer($id){
+	public function deleteReferee($id){
 		if(!empty($this->session->userdata("login"))){
 			//echo $id;
 			$result = $this->RefereeModel->deleteReferee($id);

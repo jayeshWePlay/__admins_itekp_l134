@@ -68,7 +68,7 @@
                                   <th>ID</th>
                                   <th>Player Name</th>
                                   <th>Team Name</th>
-                                  <th>Position</th>
+                                  <th width="50px;">Position</th>
                                   <th>Image</th>
                                   <th>Matches Played</th>
                                   <th>Goals Scored</th>
@@ -76,6 +76,7 @@
                                   <th>Red Cards</th>
                                   <th>Created at</th>
                                   <th>Updated at</th>
+                                  <th width="100px;" class="no-sort">Action</th>
                                 </tr>
                               </thead>
 
@@ -94,7 +95,8 @@
                                     $row .= '</td><td>'.$player['yellow_cards'];
                                     $row .= '</td><td>'.$player['red_cards'];
                                     $row .= '</td><td>'.$player['created_at'];
-                                    $row .= '</td><td>'.$player['updated_at'].'</td></tr>';
+                                    $row .= '</td><td>'.$player['updated_at'].'</td>';
+                                    $row .= '</td><td class="text-center"><a href="#"><span class="badge bg-blue"><i class="fa fa-edit"></i></span></a>&nbsp;&nbsp;&nbsp;<a href="'.site_url().'deleteFeaturedPlayer/'.$player["id"].'"><span class="badge bg-red"><i class="fa fa-remove"></i></span></a></td></tr>';
                                     echo $row;
                                   }
                                 }?>

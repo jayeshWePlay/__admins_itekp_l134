@@ -73,6 +73,7 @@
                                   <th>Preview</th>
                                   <th>Created at</th>
                                   <th>Updated at</th>
+                                  <th width="80px;" class="no-sort">Action</th>
                                 </tr>
                               </thead>
 
@@ -88,7 +89,8 @@
                                     $row .= '</td><td>'.$news1['title'];
                                     $row .= '</td><td>'.$news1['description'];
                                     $row .= '</td><td>'.$news1['created_at'];
-                                    $row .= '</td><td>'.$news1['updated_at'].'</td></tr>';
+                                    $row .= '</td><td>'.$news1['updated_at'].'</td>';
+                                    $row .= '</td><td class="text-center"><a href="#"><span class="badge bg-blue"><i class="fa fa-edit"></i></span></a>&nbsp;&nbsp;&nbsp;<a href="'.site_url().'deleteNews/'.$news1["news_id"].'"><span class="badge bg-red"><i class="fa fa-remove"></i></span></a></td></tr>';
                                     echo $row;
                                   }
                                 }?>
